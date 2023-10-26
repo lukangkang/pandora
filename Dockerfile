@@ -8,6 +8,8 @@ WORKDIR /opt/app
 
 ADD . .
 
+RUN python3 -m pip install 
+
 RUN pip --no-cache-dir install --upgrade pip && pip --no-cache-dir install .[api,cloud]
 
 ENTRYPOINT ["bin/startup.sh"]
