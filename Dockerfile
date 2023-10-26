@@ -8,6 +8,10 @@ WORKDIR /opt/app
 
 ADD . .
 
+# 设置腾讯源
+RUN pip config set global.index-url http://mirrors.cloud.tencent.com/pypi/simple
+RUN pip config set global.trusted-host mirrors.cloud.tencent.com
+
 RUN pip --no-cache-dir install --upgrade pip && pip --no-cache-dir install .[api,cloud]
 
 ENTRYPOINT ["bin/startup.sh"]
