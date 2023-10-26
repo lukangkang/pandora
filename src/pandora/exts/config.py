@@ -8,7 +8,8 @@ from appdirs import user_config_dir
 
 USER_CONFIG_DIR = getenv('USER_CONFIG_DIR', user_config_dir('Pandora-ChatGPT'))
 DATABASE_URI = getenv('DATABASE_URI',
-                      'sqlite:///{}?check_same_thread=False'.format(join(USER_CONFIG_DIR, 'pandora-chatgpt.db')))
+                      #'sqlite:///{}?check_same_thread=False'.format(join(USER_CONFIG_DIR, 'pandora-chatgpt.db')))
+                      'mysql+pymysql://pandora:nDY6zZHtThsJYW6j@124.222.55.194:3309/pandora')
 
 
 def default_api_prefix():
