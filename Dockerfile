@@ -14,7 +14,4 @@ RUN pip config set global.trusted-host mirrors.cloud.tencent.com
 
 RUN pip --no-cache-dir install --upgrade pip && pip --no-cache-dir install .[api,cloud]
 
-RUN apt-get update
-RUN apt-get install curl
-
 ENTRYPOINT ["bin/startup.sh"]
